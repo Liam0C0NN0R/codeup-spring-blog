@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Roll Dice</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/navbar :: nav"></div>
+<h1>Guess a Number</h1>
+<p>Select a number between 1 and 6:</p>
+<ul>
+  <li th:each="i: ${#numbers.sequence(1,6)}">
+    <a th:href="@{'/roll-dice/' + ${i}}">Guess: [[${i}]]</a>
+  </li>
+</ul>
+</body>
+<div th:replace="fragments/footer :: footer"></div>
+</html>
+ml>
