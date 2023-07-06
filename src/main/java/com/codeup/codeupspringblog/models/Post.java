@@ -13,7 +13,7 @@ public class Post {
     @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(nullable = false)
+    @Column(length = 12222, nullable = false)
     private String body;
 
     // constructors

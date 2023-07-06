@@ -7,7 +7,7 @@
 <h1>All Posts</h1>
 <ul>
     <li th:each="post : ${posts}">
-        <a th:href="@{'/posts/' + ${postStat.index}}"><span th:text="${post.title}"></span></a>
+        <a th:href="@{'/posts/' + ${post.id}}"><span th:text="${post.title}"></span></a>
     </li>
 </ul>
 </body>
