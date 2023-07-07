@@ -1,9 +1,14 @@
 package com.codeup.codeupspringblog.models;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name="posts")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Post {
 
     @Id
@@ -16,36 +21,7 @@ public class Post {
     @Column(length = 12222, nullable = false)
     private String body;
 
-    // constructors
-    public Post() {}
-
-    public Post(String title, String body) {
-        this.title = title;
-        this.body = body;
-    }
-
-    // getters and setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
+    private User user;
 }
