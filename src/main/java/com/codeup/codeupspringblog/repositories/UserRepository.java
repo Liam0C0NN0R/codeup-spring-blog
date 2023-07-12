@@ -7,4 +7,5 @@ import com.codeup.codeupspringblog.models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     User findFirstByOrderByIdAsc();
+    User findByUsername(String username);
 }
